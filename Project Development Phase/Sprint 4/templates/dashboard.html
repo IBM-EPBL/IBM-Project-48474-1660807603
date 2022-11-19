@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: sticky;
+            top: 0;
+            cursor: pointer;
+        }
+
+        .background {
+            background: black;
+            background-blend-mode: darken;
+            background-size: cover;
+        }
+
+        .nav-list {
+            width: 20%;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            padding-left: 90px;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            color:white;
+            font-weight:bold;
+        }
+
+
+        .nav-list li {
+            list-style: none;
+            padding: 26px 30px;
+        }
+
+        .nav-list li a {
+            text-decoration: none;
+            color: yellow;
+        }
+
+        .nav-list li a:hover {
+            color: grey;
+        }
+
+        .firstsection {
+            background-image: url("static/images/img1.jpeg");
+            background-color: #E0DADE;
+            height: 80vh;
+        }
+
+        .box-main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            max-width: 70%;
+            margin: auto;
+            height: 80%;
+            
+        }
+
+        .form-footer a{
+            text-decoration: none;
+            color: rgb(255, 94, 0);
+            justify-content: center;
+        }
+
+        .form-footer a:hover{
+            text-decoration: none;
+            color: rgb(38, 4, 159);
+            justify-content: center;
+        }
+
+        .text-footer {
+            text-align: center;
+            padding: 30px 0;
+            font-family: 'Ubuntu', sans-serif;
+            display: flex;
+            justify-content: center;
+            color: white;
+        }
+
+        .form-header {
+            padding: 25px;
+        }
+
+        .form-footer {
+            padding: 15px;
+        }
+        
+        input {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+    td {
+        padding: 1px 30px;
+    }
+    
+        
+    </style>
+</head>
+
+<body>
+    <nav class="navbar background">
+        <div class="logo">
+                <h1>Water Quality Index Prediction</h1>
+        </div>
+
+        <ul class="nav-list">
+            <li><a href="{{url_for('logout')}}">Logout</a></li>
+        </ul>
+    </nav>
+
+    <section class="firstsection">
+        <div class="box-main">
+            <div class="form-header">
+                <h2>Enter the parameters to predict the Water Quality Index</h2>
+            </div>
+            <table>
+                <form action="" method="post">
+                    <tr>
+                        <td>
+                            {{ form.hidden_tag() }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            {{ form.StationCode }}
+                        </td>
+                        <td>{{ form.State }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>{{ form.Temp }}
+                        </td>
+                        <td>{{ form.do }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>{{ form.ph }}
+                        </td>
+                        <td>{{ form.co }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>{{ form.bod }}
+                        </td>
+                        <td>{{ form.na }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>{{ form.tc }}
+                        </td>
+                        <td>{{ form.Year }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan = "2">{{ form.submit }}
+                        </td>  
+                    </tr>
+                </form>
+            </table>
+        
+            <div>
+                <h2>
+                    {{ prediction_text }}
+                </h2> 
+            </div>
+        </div>
+    </section>
+
+    <footer class="background">
+        <p class="text-footer">
+            Copyright ©-All rights are reserved
+        </p>
+    </footer>
+</body>
+
+</html>
