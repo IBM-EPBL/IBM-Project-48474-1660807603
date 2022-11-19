@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Quality Index Prediction</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: sticky;
+            top: 0;
+            cursor: pointer;
+        }
+
+        .background {
+            background: black;
+            background-blend-mode: darken;
+            background-size: cover;
+        }
+
+        .nav-list {
+            width: 30%;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            padding-left: 90px;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            color:white;
+            font-weight:bold;
+        }
+
+
+        .nav-list li {
+            list-style: none;
+            padding: 26px 30px;
+        }
+
+        .nav-list li a {
+            text-decoration: none;
+            color: yellow;
+        }
+
+        .nav-list li a:hover {
+            color: grey;
+        }
+
+        .firstsection {
+            background-image: url("static/images/img1.jpeg");
+            background-color: #E0DADE;
+            height: 80vh;
+        }
+
+        .box-main {
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+            color: black;
+            max-width: 70%;
+            margin: auto;
+            height: 80%;
+        }
+
+        .firsthalf {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .text-big {
+            font-family: 'Piazzolla', serif;
+            font-weight: bold;
+            font-size: 35px;
+        }
+
+        .text-small {
+            font-size: 25px;
+        }
+
+        .text-footer {
+            text-align: center;
+            padding: 30px 0;
+            font-family: 'Ubuntu', sans-serif;
+            display: flex;
+            justify-content: center;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar background">
+        <div class="logo">
+                <h1>Water Quality Index Prediction</h1>
+        </div>
+
+        <ul class="nav-list">
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
+        </ul>
+    </nav>
+
+    <section class="firstsection">
+        <div class="box-main">
+            <div class="firstHalf">
+                <h1 class="text-big" id="web">Water Quality Index Prediction</h1>
+                <p class="text-small">
+                    Water is the most significant resource of life, crucial for supporting the life of most existing creatures and human beings. Living organisms need water with enough quality to continue their lives. There are certain limits of pollutions that water species can tolerate. Exceeding these limits affects the existence of these creatures and threatens their lives. Therefore, modeling and predicting water quality have become very important in controlling water pollution.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="background">
+        <p class="text-footer">
+            Team ID: PNT2022TMID52665
+        </p>
+    </footer>
+</body>
+</html>
